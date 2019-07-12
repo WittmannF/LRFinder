@@ -14,6 +14,7 @@ Learning Rate Finder Callback for Keras. Proposed by Leslie Smith's at https://a
 
 ### Next Updates
 - Use exponential annealing instead of np.geospace (`start * (end/start) ** pct`)
+- Add a test framework
 
 ### License
 - MIT
