@@ -2,7 +2,7 @@
 In this repository I will be implementing my own version of the Learning Rate Finder for Keras. 
 
 ### Last Updates
-- Compatible with model.fit_generator instead of model.fit method
+- Compatible with both model.fit_generator and model.fit method
 - Allow usage of more than one epoch
 - Included momentum to make loss function smoother
 - Number of iterations is automatically inferred as the number of batches (i.e., it will always run over a full epoch)
