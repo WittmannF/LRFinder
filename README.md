@@ -1,7 +1,9 @@
 # LRFinder
-In this repository I will be implementing my own version of the Learning Rate Finder for Keras. 
+Learning Rate Finder Callback for Keras. Proposed by Leslie Smith's at https://arxiv.org/abs/1506.01186. Popularized and encouraged by Jeremy Howard in the [fast.ai deep learning course](https://course.fast.ai/). 
 
 ### Last Updates
+- Autoreload model's weights for each change of learning rate
+- For each learning rate, trains the model over `batches_lr_update` batches
 - Compatible with both model.fit_generator and model.fit method
 - Allow usage of more than one epoch
 - Included momentum to make loss function smoother
