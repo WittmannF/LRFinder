@@ -14,7 +14,11 @@ class LRFinder(Callback):
             self.stop_multiplier = stop_multiplier
         
     def on_train_begin(self, logs={}):
-        n_iterations = self.params['samples']//self.params['batch_size']
+        try:
+            n_iterations = self.params['epochs']*self.params['samples']//self.params['batch_size']
+        except:
+            n_iterations = self.params['steps']*self.params['epochs']
+            
         self.learning_rates = np.geomspace(self.min_lr, self.max_lr, \
                                            num=n_iterations+1)
         self.losses=[]
