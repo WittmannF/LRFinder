@@ -1,6 +1,35 @@
 # LRFinder
 Learning Rate Finder Callback for Keras. Proposed by Leslie Smith's at https://arxiv.org/abs/1506.01186. Popularized and encouraged by Jeremy Howard in the [fast.ai deep learning course](https://course.fast.ai/). 
 
+### Usage
+```
+from keras.models import Sequential
+from keras.layers import Flatten, Dense
+from keras.datasets import fashion_mnist
+
+# 1. Input Data
+(X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
+
+mean, std = X_train.mean(), X_train.std()
+X_train, X_test = (X_train-mean)/std, (X_test-mean)/std
+
+# 2. Define and Compile Model
+model = Sequential([Flatten(),
+                    Dense(512, activation='relu'),
+                    Dense(10, activation='softmax')])
+
+model.compile(loss='sparse_categorical_crossentropy', \
+              metrics=['accuracy'], optimizer='sgd')
+
+
+# 3. Fit using Callback
+lr_finder = LRFinder(min_lr=1e-4, max_lr=1)
+
+model.fit(X_train, y_train, batch_size=128, callbacks=[lr_finder], epochs=2)
+```
+Output:
+
+
 ### Last Updates
 - Autoreload model's weights for each change of learning rate
 - For each learning rate, trains the model over `batches_lr_update` batches
