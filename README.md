@@ -27,7 +27,7 @@ lr_finder = LRFinder(min_lr=1e-4, max_lr=1)
 
 model.fit(X_train, y_train, batch_size=128, callbacks=[lr_finder], epochs=2)
 ```
-Output:
+
 ![Screen Shot 2019-07-12 at 17 56 36](https://user-images.githubusercontent.com/5733246/61158150-84382100-a4ce-11e9-9d88-99cd43986b0e.png)
 
 ### Last Updates
