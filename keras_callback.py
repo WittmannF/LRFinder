@@ -58,6 +58,9 @@ class LRFinder(Callback):
         self.iteration += 1
     
     def on_train_end(self, logs=None):
+        if self.reload_weights:
+                self.model.load_weights('tmp.hdf5')
+                
         plt.figure(figsize=(12, 6))
         plt.plot(self.learning_rates[:len(self.losses)], self.losses)
         plt.xlabel("Learning Rate")
