@@ -6,6 +6,8 @@ Learning Rate Finder Callback for Keras. Proposed by Leslie Smith's at https://a
 from keras.models import Sequential
 from keras.layers import Flatten, Dense
 from keras.datasets import fashion_mnist
+!git clone https://github.com/WittmannF/LRFinder.git
+from LRFinder.keras_callback import LRFinder
 
 # 1. Input Data
 (X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
