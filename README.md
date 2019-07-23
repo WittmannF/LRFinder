@@ -1,4 +1,4 @@
-# LRFinder
+# LRFinder for Keras
 Learning Rate Finder Callback for Keras. Proposed by Leslie Smith's at https://arxiv.org/abs/1506.01186. Popularized and encouraged by Jeremy Howard in the [fast.ai deep learning course](https://course.fast.ai/). 
 
 ### Usage
